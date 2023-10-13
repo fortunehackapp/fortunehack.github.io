@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinais Online</title>
+    <link rel="stylesheet" href="./css/sinais.css">
+</head>
+<body>
+    <div class="hero">
+        <h1>Sinais Agora ⏰📢</h1>
+        <img src="./img/icone.png" alt="menu">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+            </div>
+            <div id="load"></div>
+            <a href="#NutsBet" id="link">LINK DA PLATAFORMA</a>
+        </div>
+    </div>
+
+    <script>
+        
+
+        setInterval(()=>{
+
+            var display = document.getElementById("load").style.display;
+
+            if(display == "none")
+                document.getElementById("load").style.display = 'block';
+            else
+                document.getElementById("load").style.display = 'none';
+            
+            setTimeout(18000)
+
+            var hrs = document.getElementById("hrs")
+            var min = document.getElementById("min")
+
+            var currentTime = new Date()
+
+            hrs.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+            min.innerHTML = (currentTime.getMinutes(10)<10?"0":""  ) + currentTime.getMinutes();
+            
+        }, 24000)
+        
+    </script>
+</body>
+</html>
